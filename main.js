@@ -121,7 +121,7 @@ console.log(reverse("mesuara"))
 
 console.log(`\nONLY VOWELS`)
 
-function onlyVowels(string){
+function onlyVowels(string) {
     let newString = ""
     for (let count = 0; count < string.length; count++) {
         if (string[count].toLowerCase() === "a" || string[count].toLowerCase() === "e" || string[count].toLowerCase() === "i" || string[count].toLowerCase() === "o" || string[count].toLowerCase() === "u") {
@@ -132,3 +132,78 @@ function onlyVowels(string){
 }
 
 console.log(onlyVowels("Anthony DeRosa"))
+
+console.log(`\nCRAZY CASE`)
+
+function crazyCase(string) {
+    let newString = ""
+    for (let count = 0; count < string.length; count++) {
+        if (count % 2 === 0) {
+            newString = newString + string[count].toLowerCase()
+        } else {
+            newString = newString + string[count].toUpperCase()
+        }
+    }
+    return newString
+}
+
+console.log(crazyCase("YELLING"))
+
+console.log(`\nTITLE CASE`)
+
+function titleCase(string) {
+    let newString = ""
+    for (let count = 0; count < string.length; count++) {
+        if (count === 0 || string[count - 1] === " ") {
+            newString = newString + string[count].toUpperCase()
+        } else {
+            newString = newString + string[count].toLowerCase()
+        }
+    }
+    return newString
+}
+
+console.log(titleCase("cOde iMMerSives"))
+
+console.log(`\nCAMEL CASE`)
+
+function camelCase(string) {
+    let newString = ""
+    for (let count = 0; count < string.length; count++) {
+        if (string[count - 1] === " ") {
+            newString = newString + string[count].toUpperCase()
+        } else if (string[count] === " ") {
+        } else {
+            newString = newString + string[count].toLowerCase()
+        }
+    }
+    return newString
+}
+
+console.log(camelCase("Boy howdy"))
+
+console.log(`\nCRAZY CASE 2 RETURN OF CRAZY CASE`)
+
+function crazyCase2ReturnOfCrazyCase(string) {
+    let newString = ""
+    for (let count = 0; count < string.length; count++) {
+        if (count === 0) {
+            newString = newString + string[count].toLowerCase()
+        } else if (string[count - 1] === " "){
+            if (newString[count - 2] === newString[count - 2].toLowerCase()){
+                newString = newString + string[count].toUpperCase()
+            } else if (newString[count - 2] === newString[count - 2].toUpperCase()){
+                newString = newString + string[count].toLowerCase()
+            }
+        } else if(string[count] === " ") {
+            newString = newString + string[count]
+        } else if (newString[count - 1] === newString[count - 1].toLowerCase()){
+            newString = newString + string[count].toUpperCase()
+        } else if (newString[count - 1] === newString[count - 1].toUpperCase()){
+            newString = newString + string[count].toLowerCase()
+        }
+    }
+    return newString
+}
+
+console.log(crazyCase2ReturnOfCrazyCase("crazy stuff"))
