@@ -102,7 +102,33 @@ function ciEmailify(name) {
             newString = `${newString}${name[count]}`
         }
     }
-        return `${newString.toLowerCase()}@codeimmersives.com`
+    return `${newString.toLowerCase()}@codeimmersives.com`
 }
 
 console.log(ciEmailify("Anthony DeRosa"))
+
+console.log(`\nREVERSE`)
+
+function reverse(string) {
+    let newString = ""
+    for (let count = (string.length - 1); count >= 0; count--) {
+        newString = newString + string[count]
+    }
+    return newString
+}
+
+console.log(reverse("mesuara"))
+
+console.log(`\nONLY VOWELS`)
+
+function onlyVowels(string){
+    let newString = ""
+    for (let count = 0; count < string.length; count++) {
+        if (string[count].toLowerCase() === "a" || string[count].toLowerCase() === "e" || string[count].toLowerCase() === "i" || string[count].toLowerCase() === "o" || string[count].toLowerCase() === "u") {
+            newString = `${newString}${string[count]}`
+        }
+    }
+    return newString
+}
+
+console.log(onlyVowels("Anthony DeRosa"))
